@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+            <script src = "Etc/jquery-3.1.1.min.js"></script>
+            <script src = "Etc/jquery-ui.min.js"></script>
+        <script>if (window.module) module = window.module;</script>
+        <link rel="stylesheet" href = "Etc/bootstrap.min.css" />
+        <link rel="stylesheet" href = "Etc/main.css" />
+
+        <script src="Core/pngFont.js"></script>
+    </head>
+
+    <body>
+        <div class="container" id = "main">
+            <h1 style="text-align:center"> PNG Font </h1>
+            <div class = "row">
+
+                <div class="col-sm-4">
+                    <label>Font</label>
+                    <input type="text" class="form-control" id = "font-name" value = "monospace"/>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Font Size</label>
+                    <input type="text" class="form-control" id = "font-size" value = "18"/>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Font Color</label>
+                    <input type="text" class="form-control" id = "font-color" value = "black"/>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12" id = "canvas-place">
+                </div>
+            </div>
+
+            <div class="row">
+                <h2>Font Sheet</h2>
+
+                <div class="col-sm-12" id = "rendered-font">
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success" id = "save-font">Save</button>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>
