@@ -32,7 +32,6 @@ class TexturePacker
             im.onload = ->
                 self.RenderImage(this)
 
-
     RenderImage: (image) ->
         if @renderX >= @canvasWidth
             @renderX = 0
@@ -45,18 +44,34 @@ class TexturePacker
 
         @renderX += image.width
 
+    Clear: ->
+        @canvasNode.width = 0
+
+        @canvasNode.width = @canvasWidth
+        @canvasNode.height =@canvasHeight
+
+        @renderX = @renderY = 0
+
     BindEvents: ->
         addTextures = $("#add-textures")
+        exporter = $("#export")
+        clear = $("#clear")
 
         addTextures.click =>
             @Import()
+
+        exporter.click =>
+            @Export()
+
+        clear.click =>
+            @Clear()
 
     Export: ->
         dialog.showSaveDialog (fileName) =>
             if not fileName?
                 alert("no file selected")
             else
-                buffer = canvasBuffer(@renderedFont, "image/png")
+                buffer = canvasBuffer(@canvasNode, "image/png")
 
                 # write the font image
                 fs.writeFile fileName, buffer, (err) ->
@@ -66,9 +81,9 @@ class TexturePacker
                         alert("File Saved")
 
                 # write the texture atlas JSON
-                fs.writeFile fileName + ".json", JSON.stringify(@fontAtlas, null, 4), (err) ->
-                    if err?
-                        alert("An error occured! #{err.message}")
+                # fs.writeFile fileName + ".json", JSON.stringify(@fontAtlas, null, 4), (err) ->
+                #     if err?
+                #         alert("An error occured! #{err.message}")
 
     Import: ->
         dialog.showOpenDialog {
