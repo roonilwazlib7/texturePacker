@@ -7,7 +7,7 @@
         <link rel="stylesheet" href = "Etc/bootstrap.min.css" />
         <link rel="stylesheet" href = "Etc/main.css" />
 
-        <script src="Core/pngFont.js"></script>
+        <script src="Core/texturePacker.js"></script>
     </head>
 
     <body>
@@ -16,18 +16,15 @@
             <div class = "row">
 
                 <div class="col-sm-4">
-                    <label>Font</label>
-                    <input type="text" class="form-control" id = "font-name" value = "monospace"/>
+                    <button type="button" class = "btn btn-primary" id = "add-textures">Add Textures</button>
                 </div>
 
                 <div class="col-sm-4">
-                    <label>Font Size</label>
-                    <input type="text" class="form-control" id = "font-size" value = "18"/>
+                    <button type="button" class = "btn btn-danger">Clear</button>
                 </div>
 
                 <div class="col-sm-4">
-                    <label>Font Color</label>
-                    <input type="text" class="form-control" id = "font-color" value = "black"/>
+                    <button type="button" class = "btn btn-success">Export</button>
                 </div>
 
             </div>
@@ -36,17 +33,6 @@
                 <div class="col-sm-12" id = "canvas-place">
                 </div>
             </div>
-
-            <div class="row">
-                <h2>Font Sheet</h2>
-
-                <div class="col-sm-12" id = "rendered-font">
-                </div>
-                <div class="col-sm-4">
-                    <button class="btn btn-success" id = "save-font">Save</button>
-                </div>
-            </div>
-
 
         </div>
     </body>
